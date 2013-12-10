@@ -1,5 +1,6 @@
 ---
 layout: default
+published: true
 ---
 
 # Basic info
