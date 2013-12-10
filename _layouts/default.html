@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Proto-clashers : An information board for my Clash of Clans clan." />
+    <title>Proto-clashers</title>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+
+    <header role="banner" class="theme-dark">
+      <div class="wrapper">
+        <h1>Clan Name</h1>
+      </div>
+    </header>
+
+    <div role="main">
+      <div class="wrapper">
+        <div class="post">
+          {{content}}
+        </div>
+        <div class="post-history">
+          <h1 class="post-history-label">History</h1>
+          <ul class="post-history-list">
+            <li class="post-history-list_item">Added accepting requests</li>
+            <li class="post-history-list_item">Added leaders</li>
+            <li class="post-history-list_item">Added basic info</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-46323278-1");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+
+  </body>
+</html>

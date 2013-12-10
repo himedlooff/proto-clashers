@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Varela Round', Arial, sans-serif;
+}
+
+.theme-dark {
+    background: #000;
+    color: #fff;
+}
+
+[role="main"] {
+    border-bottom: 1px solid #ccc;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.post {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+}
+
+.post-history {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin-left: -4px;
+}
+
+.post-history-label {
+    font-size: 1em;
+}
+
+.post-history-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.post-history-list_item {
+    margin: 0;
+    padding: 0.5em;
+    background: #eee;
+    font-size: 0.875em; /* 14 / 16 */
+}
+
+.post-history-list_item + .post-history-list_item {
+    border-top: 1px solid #fff;
+}
+
