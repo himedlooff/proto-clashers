@@ -3,7 +3,7 @@ layout: default
 published: true
 ---
 
-# Basic info
+# The basics
 
 We are a level 60+ clan.
 
