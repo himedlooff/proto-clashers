@@ -54,3 +54,12 @@ body {
     border-top: 1px solid #fff;
 }
 
+.post-history-message {
+    margin: 0;
+}
+.post-history-date {
+    margin: 0;
+    font-size: 0.75em; /* 12 / 16 */
+    color: #888;
+}
+
