@@ -19,3 +19,7 @@ baseurl: '/proto-clashers'
 author:
   name: himedlooff
   url: https://github.com/himedlooff/
+
+# Prose.io config options
+prose:
+  rooturl: "clan-name"
