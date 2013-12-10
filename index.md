@@ -5,7 +5,7 @@ published: true
 
 # Basic info
 
-We are a level 70+ clan.
+We are a level 60+ clan.
 
 Keep your donate to request ratio at around 1D:3R.
 
