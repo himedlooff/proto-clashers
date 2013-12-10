@@ -26,6 +26,21 @@ body {
     width: 75%;
 }
 
+.post-label {
+    font-size: 1em;
+}
+
+.post-content h1 {
+    font-size: 2em;
+    margin: 0.625em 0; /* 20 / 32 */
+    padding-top: 0.625em; /* 20 / 32 */
+    border-top: 1px solid #ccc;
+}
+
+.post-content p {
+    margin: 1.25em 0; /* 20 / 16 */
+}
+
 .post-history {
     display: inline-block;
     vertical-align: top;
