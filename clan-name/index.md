@@ -6,7 +6,8 @@ published: true
 # The basics
 
 We are a level 60+ clan.
-We are a active friendly clan.  Most member have been together for many, many months.
+
+We are an active friendly clan.  Most member have been together for many, many months.
 
 Keep your donate to request ratio at around 1D:3R.
 
