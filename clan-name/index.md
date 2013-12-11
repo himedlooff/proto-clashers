@@ -5,7 +5,7 @@ published: true
 
 # The basics
 
-We are a level 60+ clan.  We are an active, nice, friendly clan.  Most member have been together for many, many months.  We have a good mix of adults and teenagers.  Our goal is to provide a fun environment where we can socialize while playing this fun game.  We want active players who will chat, request and donate a lot.  Currenly we are recruit players at level 60+.  The level of our members are constantly rising, and we will soon raise our level.
+We are a level 60+ clan.  We are an active, nice, friendly clan.  Most member have been together for many, many months.  We have a good mix of adults and teenagers.  Our goal is to provide a fun environment where we can socialize while playing this fun game.  We want active players who will chat, request and donate a lot.  Currenly we are recruiting players at level 60+.  The level of our members are constantly rising, and we will soon raise our level.
 
 
 Donation Requirement:
