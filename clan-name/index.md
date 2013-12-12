@@ -32,13 +32,13 @@ Elder Requirement:  (subjected to change as our clan grow)
 # Other COC Links
 
 A good comprehensive site for Clash of Clans
-http://clashofclans.wikia.com/wiki/Clash_of_Clans_Wiki
+[http://clashofclans.wikia.com/wiki/Clash_of_Clans_Wiki]
 
 Want to check out other good bases/villages or experiment with new ideas?
-http://clashofclansbuilder.com/
+[http://clashofclansbuilder.com/]
 
 Want to know about the cost of your troops and the fastest way to train them?
-http://www.clashingtools.com/
+[http://www.clashingtools.com/]
 
 For latest information and contests to win free gems
-https://www.facebook.com/ClashofClans
+[https://www.facebook.com/ClashofClans]
