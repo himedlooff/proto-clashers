@@ -28,3 +28,17 @@ Elder Requirement:  (subjected to change as our clan grow)
 1. The requesting player's level should be 60 or higher.
 2. The requesting player's "Friend in Need" total should be their level times 100. For example if the player is level 72 then their "Friend in Need" status should be 7200 or higher.  This is more or less a guide line and not a strict number.
 3. Exceptions will be made for player's level in the high 50's with very high "Friend in Need" status.
+
+# Other COC Links
+
+A good comprehensive site for Clash of Clans
+http://clashofclans.wikia.com/wiki/Clash_of_Clans_Wiki
+
+Want to check out other good bases/villages or experiment with new ideas?
+http://clashofclansbuilder.com/
+
+Want to know about the cost of your troops and the fastest way to train them?
+http://www.clashingtools.com/
+
+For latest information and contests to win free gems
+https://www.facebook.com/ClashofClans
