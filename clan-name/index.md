@@ -7,9 +7,16 @@ published: true
 
 We are a level 60+ clan. We are an active, nice, friendly clan.  Most members have been together for many, many months. We have a good mix of adults and teenagers. Our goal is to provide a fun environment where we can socialize while playing this fun game. We want active players who will chat, request and donate a lot. Currenly we are recruiting players at level 60+. The level of our members are constantly rising, and we will soon raise our level.
 
-Donation Requirement:
+Donation Requirement: (subjected to change as our clan grow)
+
 1. Keep your donated to received ratio within 1:3 (1 donation : 3 received)
 2. Current minimum donation is 100
+
+Elder Requirement:  (subjected to change as our clan grow)
+
+1. Donate 400 to get promotion from member to elder
+2. Donate 300 to remain elder
+3. Must maintain 1:3 donate/received ratio to remain elder
 
 # Leaders
 
