@@ -29,6 +29,12 @@ Elder Requirement:  (subjected to change as our clan grow)
 2. The requesting player's "Friend in Need" total should be their level times 100. For example if the player is level 72 then their "Friend in Need" status should be 7200 or higher.  This is more or less a guide line and not a strict number.
 3. Exceptions will be made for player's level in the high 50's with very high "Friend in Need" status.
 
+# Sister/Feeder Clan Information
+
+**DragonSlayerJR** currently accept players of all levels.  (Website TBD)
+- Leader: wardogofengland
+- co-leader: L.A.S.E.R
+
 # Other COC Links
 
 A good comprehensive site for Clash of Clans
