@@ -5,7 +5,7 @@ markdown: redcarpet
 pygments: true
 
 # Title
-name: Proto-clashers
+name: DragonSlayersJR
 subtitle: An information board for my Clash of Clans clan.
 
 # When using this template with a project page set the baseurl to '/project-name'
