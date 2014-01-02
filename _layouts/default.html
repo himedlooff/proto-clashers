@@ -25,15 +25,21 @@
 
     <div role="main">
       <div class="wrapper">
+        <div class="post-history">
+          <h1 class="post-history-label">History</h1>
+          <ul class="post-history-list">
+            
+          </ul>
+        </div>
         <div class="post">
-          <h1 class="post-label">Clan Info</h1>
+          <!-- <h1 class="post-label">Clan Info</h1> -->
           <div class="post-content">
             {{content}}
           </div>
         </div>
-        <div class="post-history">
-          <h1 class="post-history-label">History</h1>
-          <ul class="post-history-list">
+        <div class="post-nav">
+          <h1 class="post-nav-label">Menu</h1>
+          <ul class="post-nav-list">
             
           </ul>
         </div>
@@ -58,8 +64,8 @@
 
             var $historyItem = $(
               '<li class="post-history-list_item">' +
-                '<p class="post-history-message"></p>' +
                 '<p class="post-history-date"></p>' +
+                '<p class="post-history-message"></p>' +
               '</li>');
 
             var commitMessage = removePeriod(data[i].commit.message);

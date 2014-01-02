@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-size: 100%;
-    font-family: 'Varela Round', Arial, sans-serif;
+    line-height: 1.375; /* 22 / 16 */
+    font-family: 'Quattrocento Sans', Arial, sans-serif;
 }
 
 h1 {
@@ -12,6 +13,10 @@ h1 {
 
 p {
     margin: 1.25em 0; /* 20 / 16 */
+}
+
+a {
+    color: #000;
 }
 
 [role="banner"] h1 {
@@ -37,6 +42,18 @@ p {
     padding: 1em;
 }
 
+.token {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+    padding: 3px 5px 2px;
+    font-size: .75em; /* 12 / 16 */
+    line-height: 1;
+    color: #fff;
+    background: #666;
+    border-radius: 2px;
+}
+
 .post-label {
     font-size: 1em;
 }
@@ -49,16 +66,37 @@ p {
 
 .post-content h1:first-child {
     margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
 }
 
-.post-history {
+.post-nav {
     margin-top: 2em;
     padding-top: 1em;
     border-top: 1px solid #ccc;
 }
 
-.post-history-label {
+.post-nav-label {
+    margin-top: 0;
+}
+
+/*.post-history {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+}*/
+
+/*.post-history-label {
     font-size: 1em;
+}*/
+
+.post-history {
+    font-size: 1em; /* 16 */
+    background: #eee;
+}
+
+.post-history .wrapper {
+    padding: 1em;
 }
 
 .post-history-list {
@@ -68,30 +106,55 @@ p {
 }
 
 .post-history-list_item {
+    display: none;
     margin: 0;
-    padding: 0.5em;
-    background: #eee;
-    font-size: 0.875em; /* 14 / 16 */
+    padding: 0.75em 0; /* 12 / 16 */
+}
+
+.post-history-list_item:first-child {
+    display: block;
+    padding-top: 0;
 }
 
 .post-history-list_item + .post-history-list_item {
     border-top: 1px solid #fff;
 }
 
-.post-history-message {
+.post-history-more {
     margin: 0;
+    text-align: right;
+    font-size: .75em; /* 12 / 16 */
 }
 
 .post-history-date {
-    margin: 0;
-    font-size: 0.75em; /* 12 / 16 */
-    color: #888;
+    margin-right: 6px;
 }
+
+.post-history-latest-label {
+    margin-right: -3px;
+    background: #000;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.post-history-latest-label + .post-history-date {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/*.post-history-date-month-day,
+.post-history-date-year {
+    
+}*/
 
 @media screen and (min-width: 48em) { /* 768 / 30 */
 
     .wrapper {
         padding: 2em;
+    }
+
+    .post-history .wrapper {
+        padding: 1em 2em;
     }
 
     .post {
@@ -101,7 +164,7 @@ p {
         margin-right: 4.9%;
     }
 
-    .post-history {
+    .post-nav {
         display: inline-block;
         vertical-align: top;
         width: 25%;
