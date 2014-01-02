@@ -1,25 +1,8 @@
-# Base configuration
-permalink: /:title 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-markdown: redcarpet
-pygments: true
-
-# Title
-name: DragonSlayersJR
-subtitle: An information board for my Clash of Clans clan.
-
-# When using this template with a project page set the baseurl to '/project-name'
-# For user/organization pages set this to an empty string
-# When working locally use jekyll serve --baseurl '' so that you can view everything at localhost:4000
 # See http://jekyllrb.com/docs/github-pages/ for more info
-#baseurl: ''
-baseurl: '/proto-clashers'
+baseurl: '/DragonSlayersJr'
+baseurlremote: '/DragonSlayersJr'
 
-# Author/Organization info to be displayed in the templates
-author:
-  name: himedlooff
-  url: https://github.com/himedlooff/
-
-# Prose.io config options
-prose:
-  rooturl: "clan-name"
+# Google Analytics
+ga:
+  root: 'himedlooff.github.io'
+  id: 'UA-46323278-1'

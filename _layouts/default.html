@@ -3,13 +3,13 @@
 
   <head>
 
-    <meta charset='utf-8' />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Proto-clashers : An information board for my Clash of Clans clan." />
-    <title>Proto-clashers</title>
+    <meta name="description" content="{{ page.subtitle }}" />
+    <title>{{ page.title }}</title>
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,7 @@
 
     <header role="banner" class="theme-dark">
       <div class="wrapper">
-        <h1>{{ site.name }}</h1>
+        <h1><img src="assets/img/shield.png" alt="">{{ page.title }}</h1>
       </div>
     </header>
 
@@ -34,32 +34,80 @@
         <div class="post-history">
           <h1 class="post-history-label">History</h1>
           <ul class="post-history-list">
-            <li class="post-history-list_item">
-              <p class="post-history-message">Added accepting requests</p>
-              <p class="post-history-date">01:30pm - 12/09/2013</p>
-            </li>
-            <li class="post-history-list_item">
-              <p class="post-history-message">Added leaders</p>
-              <p class="post-history-date">12:15pm - 12/09/2013</p>
-            </li>
-            <li class="post-history-list_item">
-              <p class="post-history-message">Added basic info</p>
-              <p class="post-history-date">12:05pm - 12/09/2013</p>
-            </li>
+            
           </ul>
         </div>
       </div>
     </div>
 
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script>
+    (function($)
+    {
+
+        $.get('https://api.github.com/repos/himedlooff{{ site.baseurlremote }}/commits').done(init);
+
+        function init(data) {
+
+          //console.log(data);
+          var i = 0,
+              total = data.length,
+              $commits = $()
+
+          for ( i; i < total; i++ ) {
+
+            var $historyItem = $(
+              '<li class="post-history-list_item">' +
+                '<p class="post-history-message"></p>' +
+                '<p class="post-history-date"></p>' +
+              '</li>');
+
+            var commitMessage = removePeriod(data[i].commit.message);
+
+            var timeStr = data[i].commit.committer.date;
+            var date = new Date(timeStr);
+            var day = date.getDate();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var dateStr = month+'/'+day+'/'+year;
+
+            //console.log(data[i].commit.message);
+            //console.log(dateStr);
+
+            $historyItem.find('.post-history-message').html(commitMessage);
+            $historyItem.find('.post-history-date').html(dateStr);
+
+            if (data[i].commit.author.name === '{{ page.editor }}') {
+              $commits = $commits.add( $historyItem );
+            }
+
+          }
+
+          $('.post-history-list').html($commits);
+
+        }
+
+        function removePeriod(str) {
+          lastCharacter = str.substring(str.length - 1);
+          if ( lastCharacter === '.' ) {
+            return str.substring(0, str.length - 1);
+          } else {
+            return str;
+          }
+        }
+
+    }(jQuery));
     </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-46323278-1");
-      pageTracker._trackPageview();
-      } catch(err) {}
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{{ site.ga.id }}', '{{ site.ga.root }}');
+      ga('send', 'pageview');
+
     </script>
 
   </body>
