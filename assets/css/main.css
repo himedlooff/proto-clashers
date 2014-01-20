@@ -90,6 +90,13 @@ a {
     margin-top: 0;
 }
 
+.post-nav-list,
+.post-nav-list-item {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
 .post-history {
     display: none;
     font-size: 1em; /* 16 */
