@@ -1,7 +1,7 @@
 ---
 layout: default
 published: true
-title: DragonSlayers I
+title: Sample Site
 subtitle: An information board for the Clash of Clans clan.
 editor: Eagles235
 ---

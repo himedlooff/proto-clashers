@@ -82,8 +82,6 @@ a {
 
 .post-nav {
     margin-top: 2em;
-    padding-top: 1em;
-    border-top: 1px solid #ccc;
 }
 
 .post-nav-label {
@@ -94,7 +92,17 @@ a {
 .post-nav-list-item {
     padding: 0;
     margin: 0;
+    border-top: 1px solid #ccc;
     list-style-type: none;
+}
+
+.post-nav-list-item-link {
+    display: block;
+    padding: 1em 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.75em; /* 12 / 16 = 0.75 */
+    text-decoration: none;
 }
 
 .post-history {
@@ -158,18 +166,16 @@ a {
     }
 
     .post {
-        display: inline-block;
-        vertical-align: top;
-        width: 70%;
-        margin-right: 4.9%;
+        display: block;
+        width: 80%;
+        float: right;
     }
 
     .post-nav {
-        display: inline-block;
-        vertical-align: top;
-        width: 25%;
-        margin: 0 0 0 -4px;
+        display: block;
+        width: 15%;
         padding: 0;
+        margin: 0;
         border: 0;
     }
 

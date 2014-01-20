@@ -15,7 +15,7 @@ function buildMenu() {
 
   var $nav = $(
     '<div class="post-nav">' +
-      '<h1 class="post-nav-label">Menu</h1>' +
+      '<!--<h1 class="post-nav-label">Menu</h1>-->' +
       '<ul class="post-nav-list">' +
       '</ul>' +
     '</div>'
@@ -32,7 +32,7 @@ function buildMenu() {
     );
 
     $navListItem.html(
-      '<a href="#' + $this.attr('id') + '">' +
+      '<a href="#' + $this.attr('id') + '" class="post-nav-list-item-link">' +
         $this.text() +
       '</a>'
     );
