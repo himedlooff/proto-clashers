@@ -87,7 +87,7 @@ function buildHistory(data, editor) {
     var timeStr = data[i].commit.committer.date;
     var date = new Date(timeStr);
     var day = date.getDate();
-    var year = date.getFullYear();
+    var year = date.getFullYear().toString().substr(2,2);
     var month = date.getMonth()+1;
     var dateStr = '<span class="post-history-date-month-day">' + month + '-' + day + '</span>' + '-' +
                   '<span class="post-history-date-year">' + year + '</span>';
