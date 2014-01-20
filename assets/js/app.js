@@ -59,16 +59,18 @@ function buildHistory(data, editor) {
     '<div class="post-history">' +
       '<div class="wrapper">' +
         '<ul class="post-history-list"></ul>' +
-        '<p class="post-history-more"><a href="#">See the full history</a></p>' +
       '</div>' +
     '</div>'
   );
 
   var $latestHistoryItem = $(
-    '<p class="post-history-list_item">' +
-      '<span class="post-history-message">' +
-        '<span class="post-history-date token"></span>' +
+    '<p class="post-history-latest post-history-list_item">' +
+      '<span class="token-group token-group-stacked">' +
+        '<span class="post-history-latest-label token token__black token-group_item token-group-stacked_item">Latest</span> ' +
+        '<span class="post-history-date token token-group_item token-group-stacked_item"></span>' +
       '</span> ' +
+      '<span class="post-history-message"></span> ' +
+      '<span class="post-history-more"><a href="#">See the full history</a></span>' +
     '</p>');
 
   for ( i; i < total; i++ ) {
@@ -79,8 +81,6 @@ function buildHistory(data, editor) {
           '<span class="post-history-date token"></span>' +
         '</span> ' +
       '</li>');
-
-    var latestLabel = '<span class="post-history-latest-label token">Edited</span> ';
 
     var commitMessage = cleanCommitMessage(data[i].commit.message);
 
@@ -103,9 +103,7 @@ function buildHistory(data, editor) {
 
     if (data[i].commit.author.name === editor) {
 
-      if (i === 0) {
-        $item.find('.post-history-message').prepend(latestLabel);
-      } else {
+      if (i > 0) {
         $commits = $commits.add( $item );
       }
 
