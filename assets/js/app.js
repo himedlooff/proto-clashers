@@ -80,7 +80,7 @@ function buildHistory(data, editor) {
         '</span> ' +
       '</li>');
 
-    var latestLabel = '<span class="post-history-latest-label token">Latest update</span> ';
+    var latestLabel = '<span class="post-history-latest-label token">Edited</span> ';
 
     var commitMessage = cleanCommitMessage(data[i].commit.message);
 

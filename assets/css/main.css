@@ -127,6 +127,11 @@ a {
     background: #eee;
 }
 
+.post-history > .wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .post-history-list {
     display: none;
     padding: 0;
