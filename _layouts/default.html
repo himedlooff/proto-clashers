@@ -25,12 +25,6 @@
 
     <div role="main">
       <div class="wrapper">
-        <div class="post-history">
-          <h1 class="post-history-label">History</h1>
-          <ul class="post-history-list">
-            
-          </ul>
-        </div>
         <div class="post">
           <!-- <h1 class="post-label">Clan Info</h1> -->
           <div class="post-content">
@@ -47,62 +41,19 @@
     </div>
 
     <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
     <script>
-    (function($)
-    {
+      (function($)
+      {
 
-        $.get('https://api.github.com/repos/himedlooff{{ site.baseurlremote }}/commits').done(init);
+        var repo = '{{ site.baseurlremote }}',
+            editor = '{{ page.editor }}';
 
-        function init(data) {
-
-          //console.log(data);
-          var i = 0,
-              total = data.length,
-              $commits = $()
-
-          for ( i; i < total; i++ ) {
-
-            var $historyItem = $(
-              '<li class="post-history-list_item">' +
-                '<p class="post-history-date"></p>' +
-                '<p class="post-history-message"></p>' +
-              '</li>');
-
-            var commitMessage = removePeriod(data[i].commit.message);
-
-            var timeStr = data[i].commit.committer.date;
-            var date = new Date(timeStr);
-            var day = date.getDate();
-            var year = date.getFullYear();
-            var month = date.getMonth()+1;
-            var dateStr = month+'/'+day+'/'+year;
-
-            //console.log(data[i].commit.message);
-            //console.log(dateStr);
-
-            $historyItem.find('.post-history-message').html(commitMessage);
-            $historyItem.find('.post-history-date').html(dateStr);
-
-            if (data[i].commit.author.name === '{{ page.editor }}') {
-              $commits = $commits.add( $historyItem );
-            }
-
-          }
-
-          $('.post-history-list').html($commits);
-
+        if (repo && editor) {
+          getGithubData(repo, editor);
         }
 
-        function removePeriod(str) {
-          lastCharacter = str.substring(str.length - 1);
-          if ( lastCharacter === '.' ) {
-            return str.substring(0, str.length - 1);
-          } else {
-            return str;
-          }
-        }
-
-    }(jQuery));
+      }(jQuery));
     </script>
 
     <script>
