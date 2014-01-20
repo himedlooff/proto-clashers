@@ -8,31 +8,41 @@ function getGithubData(repo, editor) {
 
 function buildHTML(data, editor) {
   buildHistory(data, editor);
-  buildMenu();
+  initTOCNav();
 }
 
-function buildMenu() {
+function initTOCNav() {
 
-  var $nav = $(
+  // Creates and inserts a table of contents nav
+
+  $('.post').after(
     '<div class="post-nav">' +
       '<h1 class="post-nav-label">Table of contents</h1>' +
       '<ul class="post-nav-list">' +
+        makeTOCNav() +
       '</ul>' +
     '</div>'
   );
 
-  var $navItems = $();
+}
 
+function makeTOCNav() {
+
+  // Returns a string representing html for the table of contents nav.
+
+  var navItems = '';
+
+  // Make a nav item html string for each h1 element
+  // in .post-content and append it to navItems.
   $('.post-content h1').each(function(){
-    $navItems = $navItems.add( makeTOCMenuItem(this) );
+    navItems += makeTOCNavItem(this);
   });
 
-  $nav.find('.post-nav-list').html($navItems);
-  $('.post').after($nav);
+  return navItems;
 
 }
 
-function makeTOCMenuItem(headingElement) {
+function makeTOCNavItem(headingElement) {
 
   // Expects a dom element and returns a string representing html
 
