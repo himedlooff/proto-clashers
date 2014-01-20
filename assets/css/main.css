@@ -90,17 +90,8 @@ a {
     margin-top: 0;
 }
 
-/*.post-history {
-    margin-top: 2em;
-    padding-top: 1em;
-    border-top: 1px solid #ccc;
-}*/
-
-/*.post-history-label {
-    font-size: 1em;
-}*/
-
 .post-history {
+    display: none;
     font-size: 1em; /* 16 */
     background: #eee;
 }
