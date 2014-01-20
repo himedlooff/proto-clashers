@@ -15,7 +15,7 @@ function buildMenu() {
 
   var $nav = $(
     '<div class="post-nav">' +
-      '<!--<h1 class="post-nav-label">Menu</h1>-->' +
+      '<h1 class="post-nav-label">Table of contents</h1>' +
       '<ul class="post-nav-list">' +
       '</ul>' +
     '</div>'
