@@ -7,8 +7,49 @@ function getGithubData(repo, editor) {
 }
 
 function buildHTML(data, editor) {
+  buildHistory(data, editor);
+  buildMenu();
+}
+
+function buildMenu() {
+
+  var $nav = $(
+    '<div class="post-nav">' +
+      '<h1 class="post-nav-label">Menu</h1>' +
+      '<ul class="post-nav-list">' +
+      '</ul>' +
+    '</div>'
+  );
+
+  var $navItems = $();
+
+  $('.post-content h1').each(function(){
+
+    var $this = $(this);
+    var $navListItem = $(
+      '<li class="nav-list_item">' +
+      '</li>'
+    );
+
+    $navListItem.html(
+      '<a href="#' + $this.attr('id') + '">' +
+        $this.text() +
+      '</a>'
+    );
+
+    $navItems = $navItems.add( $navListItem );
+
+  });
+
+  $nav.find('.post-nav-list').html($navItems);
+  $('.post').after($nav);
+
+}
+
+function buildHistory(data, editor) {
 
   //console.log(data);
+
   var i = 0,
       total = data.length,
       $latestCommit = $(),
