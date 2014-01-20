@@ -24,25 +24,26 @@ function buildMenu() {
   var $navItems = $();
 
   $('.post-content h1').each(function(){
-
-    var $this = $(this);
-    var $navListItem = $(
-      '<li class="nav-list_item">' +
-      '</li>'
-    );
-
-    $navListItem.html(
-      '<a href="#' + $this.attr('id') + '" class="post-nav-list-item-link">' +
-        $this.text() +
-      '</a>'
-    );
-
-    $navItems = $navItems.add( $navListItem );
-
+    $navItems = $navItems.add( makeTOCMenuItem(this) );
   });
 
   $nav.find('.post-nav-list').html($navItems);
   $('.post').after($nav);
+
+}
+
+function makeTOCMenuItem(headingElement) {
+
+  // Expects a dom element and returns a string representing html
+
+  var $h = $(headingElement);
+
+  return '' +
+    '<li class="nav-list_item">' +
+      '<a href="#' + $h.attr('id') + '" class="post-nav-list-item-link">' +
+        $h.text() +
+      '</a>' +
+    '</li>';
 
 }
 
