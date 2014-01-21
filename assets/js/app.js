@@ -1,5 +1,11 @@
 
+/* ==========================================================================
+   Proto-clashers page enhancements
+   ========================================================================== */
+
 function initPage(repo, editor) {
+
+  // This function initializes all of the enhancements for the page
 
   // Create a table of contents nav from the h1 elements in .post-content
   initTOCNav();
@@ -7,13 +13,17 @@ function initPage(repo, editor) {
   // Add table of content links before each h1 in .post-content
   initTOCLinks();
 
-  // Build the history functionality using commit messages from github
+  // Build a history list using commit messages from github
   $.get('https://api.github.com/repos/himedlooff' + repo + '/commits')
     .done(function(data){
-      buildHistory(data, editor);
+      initHistoryList(data, editor);
     });
 
 }
+
+/* ==========================================================================
+   Table of contents nav
+   ========================================================================== */
 
 function initTOCNav() {
 
@@ -68,6 +78,10 @@ function makeTOCNavItem(headingElement) {
 
 }
 
+/* ==========================================================================
+   Table of contents links
+   ========================================================================== */
+
 function initTOCLinks() {
 
   // Inserts a link to the table of contents nav before each h1 element in .post-content
@@ -87,73 +101,22 @@ function initTOCLinks() {
 
 }
 
-function buildHistory(data, editor) {
+/* ==========================================================================
+   History list
+   ========================================================================== */
 
-  //console.log(data);
-
-  var i = 0,
-      total = data.length,
-      $latestCommit = $(),
-      $commits = $();
+function initHistoryList(data, editor) {
 
   var $postHistory = $(
     '<div class="post-history">' +
       '<div class="wrapper">' +
-        '<ul class="post-history-list"></ul>' +
+        makeLatestHistoryItem(data[0]) +
+        '<ul class="post-history-list">' +
+          makeHistoryList(data, editor) +
+        '</ul>' +
       '</div>' +
     '</div>'
   );
-
-  var $latestHistoryItem = $(
-    '<p class="post-history-latest post-history-list_item">' +
-      '<span class="token-group token-group-stacked">' +
-        '<span class="post-history-latest-label token token__dark token-group_item token-group-stacked_item">Latest</span> ' +
-        '<span class="post-history-date token token-group_item token-group-stacked_item"></span>' +
-      '</span> ' +
-      '<span class="post-history-message"></span> ' +
-      '<span class="post-history-more"><a href="#">See the full history</a></span>' +
-    '</p>');
-
-  for ( i; i < total; i++ ) {
-
-    var $historyListItem = $(
-      '<li class="post-history-list_item">' +
-        '<span class="post-history-message">' +
-          '<span class="post-history-date token"></span>' +
-        '</span> ' +
-      '</li>');
-
-    var commitMessage = cleanCommitMessage(data[i].commit.message);
-
-    var timeStr = data[i].commit.committer.date;
-    var date = new Date(timeStr);
-    var day = date.getDate();
-    var year = date.getFullYear().toString().substr(2,2);
-    var month = date.getMonth()+1;
-    var dateStr = '<span class="post-history-date-month-day">' + month + '-' + day + '</span>' + '-' +
-                  '<span class="post-history-date-year">' + year + '</span>';
-
-    var $item = (i === 0) ? $latestHistoryItem : $historyListItem;
-
-    //console.log(data[i].commit.message);
-    //console.log(dateStr);
-
-    $item.find('.post-history-message').append(commitMessage);
-    $item.find('.post-history-date').append(dateStr);
-
-
-    if (data[i].commit.author.name === editor) {
-
-      if (i > 0) {
-        $commits = $commits.add( $item );
-      }
-
-    }
-
-  }
-
-  $postHistory.find('.wrapper').prepend($latestHistoryItem);
-  $postHistory.find('.post-history-list').html($commits);
 
   $('[role="main"]').prepend($postHistory);
 
@@ -166,14 +129,72 @@ function buildHistory(data, editor) {
 
 }
 
+function makeHistoryList(data, editor) {
+
+  var i = 1, //Start at the second item
+      total = data.length,
+      historyList = '';
+
+  for ( i; i < total; i++ ) {
+    if (data[i].commit.author.name === editor) {
+      historyList += makeHistoryItem(
+        data[i],
+        '<li class="post-history-list_item">' +
+          '<span class="post-history-message">' +
+            '<span class="post-history-date token"></span>' +
+          '</span> ' +
+        '</li>'
+      );
+    }
+  }
+
+  return historyList;
+
+}
+
+function makeHistoryItem(commitData, template) {
+
+  var $template = $(template);
+  var commitMessage = cleanCommitMessage(commitData.commit.message);
+  var timeStr = commitData.commit.committer.date;
+  var date = new Date(timeStr);
+  var day = date.getDate();
+  var year = date.getFullYear().toString().substr(2,2);
+  var month = date.getMonth()+1;
+  var dateStr = '<span class="post-history-date-month-day">' + month + '-' + day + '</span>' + '-' +
+                '<span class="post-history-date-year">' + year + '</span>';
+
+  $template.find('.post-history-message').append(commitMessage);
+  $template.find('.post-history-date').append(dateStr);
+
+  return $('<div>').append($template.clone()).html();
+
+}
+
+function makeLatestHistoryItem(firstCommitData) {
+
+  return makeHistoryItem(
+    firstCommitData,
+    '<p class="post-history-latest post-history-list_item">' +
+      '<span class="token-group token-group-stacked">' +
+        '<span class="post-history-latest-label token token__dark token-group_item token-group-stacked_item">Latest</span> ' +
+        '<span class="post-history-date token token-group_item token-group-stacked_item"></span>' +
+      '</span> ' +
+      '<span class="post-history-message"></span> ' +
+      '<span class="post-history-more"><a href="#">See the full history</a></span>' +
+    '</p>'
+  );
+
+}
+
 function cleanCommitMessage(str) {
   var newStr = str;
   newStr = removePeriod(newStr);
-  newStr = editText(newStr);
+  newStr = removePhrases(newStr);
   return newStr;
 }
 
-function editText(str) {
+function removePhrases(str) {
   return str.replace('Update index.md', '');
 }
 
