@@ -45,7 +45,7 @@
             editor = '{{ page.editor }}';
 
         if (repo && editor) {
-          getGithubData(repo, editor);
+          initPage(repo, editor);
         }
 
       }(jQuery));

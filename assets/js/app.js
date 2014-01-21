@@ -1,15 +1,18 @@
 
-function getGithubData(repo, editor) {
+function initPage(repo, editor) {
+
+  // Create a table of contents nav from the h1 elements in .post-content
+  initTOCNav();
+
+  // Add table of content links before each h1 in .post-content
+  initTOCLinks();
+
+  // Build the history functionality using commit messages from github
   $.get('https://api.github.com/repos/himedlooff' + repo + '/commits')
     .done(function(data){
-      buildHTML(data, editor);
+      buildHistory(data, editor);
     });
-}
 
-function buildHTML(data, editor) {
-  buildHistory(data, editor);
-  initTOCNav();
-  initTOCLinks();
 }
 
 function initTOCNav() {
