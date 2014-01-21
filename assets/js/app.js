@@ -107,35 +107,40 @@ function initTOCLinks() {
 
 function initHistoryList(data, editor) {
 
-  var $postHistory = $(
+  // Initializes the creation and placement of the hitory list and history list events.
+
+  // Create the history list and insert it into the dom.
+  $('[role="main"]').prepend(
     '<div class="history">' +
       '<div class="wrapper">' +
         makeLatestHistoryItem(data[0]) +
         '<ul class="history-list">' +
-          makeHistoryList(data, editor) +
+          makeHistoryItemList(data, editor) +
         '</ul>' +
       '</div>' +
-    '</div>'
-  );
-
-  $('[role="main"]').prepend($postHistory);
-
+    '</div>')
+    .children('.history')
+    .slideToggle();
+  
+  // Expand the history list on click
   $('.history-more').click(function(e){
     e.preventDefault();
     $('.history-list').slideToggle();
   });
 
-  $postHistory.slideToggle();
-
 }
 
-function makeHistoryList(data, editor) {
+function makeHistoryItemList(data, editor) {
 
-  var i = 1, //Start at the second item
-      total = data.length,
+  // Expects github api data for a repos commits, and the string of the username to filter the commits by.
+  // Returns a string representing html for all but the first filtered commits.
+
+  var total = data.length,
       historyList = '';
 
-  for ( i; i < total; i++ ) {
+  // Loop through the data source starting from the second item and create a history item string
+  // representing html. Append them together to screate a master list of all history items.
+  for ( var i = 1; i < total; i++ ) {
     if (data[i].commit.author.name === editor) {
       historyList += makeHistoryItem(
         data[i],
@@ -153,6 +158,9 @@ function makeHistoryList(data, editor) {
 }
 
 function makeHistoryItem(commitData, template) {
+
+  // Expects github api data for a single repo commit, and a string to use as an html template.
+  // Returns a string representing html for the commit.
 
   var $template = $(template);
   var commitMessage = cleanCommitMessage(commitData.commit.message);
@@ -172,6 +180,9 @@ function makeHistoryItem(commitData, template) {
 }
 
 function makeLatestHistoryItem(firstCommitData) {
+
+  // Expects github api data for a single repo commit.
+  // Returns a string representing html for the commit.
 
   return makeHistoryItem(
     firstCommitData,
