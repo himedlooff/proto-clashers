@@ -108,10 +108,10 @@ function initTOCLinks() {
 function initHistoryList(data, editor) {
 
   var $postHistory = $(
-    '<div class="post-history">' +
+    '<div class="history">' +
       '<div class="wrapper">' +
         makeLatestHistoryItem(data[0]) +
-        '<ul class="post-history-list">' +
+        '<ul class="history-list">' +
           makeHistoryList(data, editor) +
         '</ul>' +
       '</div>' +
@@ -120,9 +120,9 @@ function initHistoryList(data, editor) {
 
   $('[role="main"]').prepend($postHistory);
 
-  $('.post-history-more').click(function(e){
+  $('.history-more').click(function(e){
     e.preventDefault();
-    $('.post-history-list').slideToggle();
+    $('.history-list').slideToggle();
   });
 
   $postHistory.slideToggle();
@@ -139,9 +139,9 @@ function makeHistoryList(data, editor) {
     if (data[i].commit.author.name === editor) {
       historyList += makeHistoryItem(
         data[i],
-        '<li class="post-history-list_item">' +
-          '<span class="post-history-message">' +
-            '<span class="post-history-date token"></span>' +
+        '<li class="history-list_item">' +
+          '<span class="history-message">' +
+            '<span class="history-date token"></span>' +
           '</span> ' +
         '</li>'
       );
@@ -161,11 +161,11 @@ function makeHistoryItem(commitData, template) {
   var day = date.getDate();
   var year = date.getFullYear().toString().substr(2,2);
   var month = date.getMonth()+1;
-  var dateStr = '<span class="post-history-date-month-day">' + month + '-' + day + '</span>' + '-' +
-                '<span class="post-history-date-year">' + year + '</span>';
+  var dateStr = '<span class="history-date-month-day">' + month + '-' + day + '</span>' + '-' +
+                '<span class="history-date-year">' + year + '</span>';
 
-  $template.find('.post-history-message').append(commitMessage);
-  $template.find('.post-history-date').append(dateStr);
+  $template.find('.history-message').append(commitMessage);
+  $template.find('.history-date').append(dateStr);
 
   return $('<div>').append($template.clone()).html();
 
@@ -175,13 +175,13 @@ function makeLatestHistoryItem(firstCommitData) {
 
   return makeHistoryItem(
     firstCommitData,
-    '<p class="post-history-latest post-history-list_item">' +
+    '<p class="history-latest history-list_item">' +
       '<span class="token-group token-group-stacked">' +
-        '<span class="post-history-latest-label token token__dark token-group_item token-group-stacked_item">Latest</span> ' +
-        '<span class="post-history-date token token-group_item token-group-stacked_item"></span>' +
+        '<span class="history-latest-label token token__dark token-group_item token-group-stacked_item">Latest</span> ' +
+        '<span class="history-date token token-group_item token-group-stacked_item"></span>' +
       '</span> ' +
-      '<span class="post-history-message"></span> ' +
-      '<span class="post-history-more"><a href="#">See the full history</a></span>' +
+      '<span class="history-message"></span> ' +
+      '<span class="history-more"><a href="#">See the full history</a></span>' +
     '</p>'
   );
 
