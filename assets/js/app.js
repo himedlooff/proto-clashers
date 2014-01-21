@@ -159,6 +159,8 @@ function buildHistory(data, editor) {
     $('.post-history-list').slideToggle();
   });
 
+  $postHistory.slideToggle();
+
 }
 
 function cleanCommitMessage(str) {
