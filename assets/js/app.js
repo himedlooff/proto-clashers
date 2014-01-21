@@ -9,6 +9,7 @@ function getGithubData(repo, editor) {
 function buildHTML(data, editor) {
   buildHistory(data, editor);
   initTOCNav();
+  initTOCLinks();
 }
 
 function initTOCNav() {
@@ -17,7 +18,7 @@ function initTOCNav() {
 
   $('.post').after(
     '<div class="post-nav">' +
-      '<h1 class="post-nav-label">Table of contents</h1>' +
+      '<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
       '<ul class="post-nav-list">' +
         makeTOCNav() +
       '</ul>' +
@@ -57,6 +58,25 @@ function makeTOCNavItem(headingElement) {
 
 }
 
+function initTOCLinks() {
+
+  // Inserts a link to the table of contents nav before each h1 element in .post-content
+
+  var tocLink = '' +
+        '<p class="toc-nav-jump-link">' +
+          '<a href="#table-of-contents" class="token token__light">' +
+            'Table of Contents' +
+          '</a>' +
+        '</p>';
+
+  $('.post-content h1').each(function(index){
+    if (index > 0) {
+      $(this).before(tocLink);
+    }
+  });
+
+}
+
 function buildHistory(data, editor) {
 
   //console.log(data);
@@ -77,7 +97,7 @@ function buildHistory(data, editor) {
   var $latestHistoryItem = $(
     '<p class="post-history-latest post-history-list_item">' +
       '<span class="token-group token-group-stacked">' +
-        '<span class="post-history-latest-label token token__black token-group_item token-group-stacked_item">Latest</span> ' +
+        '<span class="post-history-latest-label token token__dark token-group_item token-group-stacked_item">Latest</span> ' +
         '<span class="post-history-date token token-group_item token-group-stacked_item"></span>' +
       '</span> ' +
       '<span class="post-history-message"></span> ' +
