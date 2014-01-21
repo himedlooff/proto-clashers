@@ -7,7 +7,7 @@ function getGithubData(repo, editor) {
 }
 
 function buildHTML(data, editor) {
-  buildHistory(data, editor);
+  //buildHistory(data, editor);
   initTOCNav();
   initTOCLinks();
 }
@@ -17,13 +17,20 @@ function initTOCNav() {
   // Creates and inserts a table of contents nav
 
   $('.post').after(
-    '<div class="post-nav">' +
-      '<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
-      '<ul class="post-nav-list">' +
-        makeTOCNav() +
-      '</ul>' +
+    '<div class="l-side" id="post-nav_wrapper">' +
+      '<div class="post-nav" id="post-nav">' +
+        '<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
+        '<ul class="post-nav-list">' +
+          makeTOCNav() +
+        '</ul>' +
+      '</div>' +
     '</div>'
   );
+
+  $('#post-nav').sticky({
+    topSpacing: 0,
+    getWidthFrom: '#post-nav_wrapper'
+  });
 
 }
 

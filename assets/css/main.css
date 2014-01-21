@@ -52,6 +52,10 @@ a {
     clear: both;
 }
 
+[role="main"] > .wrapper {
+    padding-top: 2em;
+}
+
 .token {
     display: inline-block;
     vertical-align: middle;
@@ -114,19 +118,8 @@ a {
     font-size: 1em;
 }
 
-/*.post-content {
-    padding: 1em 0;
-}*/
-
-.post-content h1 {
-    margin: 1.25em 0 0.714285714em; /* 35 / 28, 20 / 28 */
-}
-
-.post-content h1:first-child {
-    margin-top: 0.357142857em; /* 10 / 28 */
-}
-
 .post-content {
+    padding-top: 1em;
      -ms-word-break: break-all;
          word-break: break-all;
 
@@ -138,6 +131,14 @@ a {
             hyphens: auto;
 }
 
+.post-content h1 {
+    margin: 1.25em 0 0.714285714em; /* 35 / 28, 20 / 28 */
+}
+
+.post-content h1:first-child {
+    margin-top: -5px;
+}
+
 .post-nav {
     padding-top: 2em;
     margin-top: 2em;
@@ -147,7 +148,7 @@ a {
 
 .post-nav-label {
     font-size: 1em;
-    margin-top: 1em;
+    margin-top: 0;
 }
 
 .post-nav-list,
@@ -236,23 +237,26 @@ a {
         padding: 2em;
     }
 
-    .post-history .wrapper {
-        padding: 0 2em;
-    }
-
-    .post {
+    .l-main {
         display: block;
         width: 80%;
         float: right;
     }
 
-    .post-nav {
+    .l-side {
         display: block;
         width: 15%;
-        padding: 0;
+    }
+
+    .post-nav {
+        padding-top: 1em;
         margin: 0;
         border: 0;
         background: transparent;
+    }
+
+    .post-history .wrapper {
+        padding: 0 2em;
     }
 
     .toc-nav-jump-link {
