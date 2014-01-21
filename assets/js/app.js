@@ -7,7 +7,7 @@ function getGithubData(repo, editor) {
 }
 
 function buildHTML(data, editor) {
-  //buildHistory(data, editor);
+  buildHistory(data, editor);
   initTOCNav();
   initTOCLinks();
 }
@@ -158,8 +158,6 @@ function buildHistory(data, editor) {
     e.preventDefault();
     $('.post-history-list').slideToggle();
   });
-
-  $postHistory.slideToggle();
 
 }
 
