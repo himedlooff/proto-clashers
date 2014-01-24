@@ -19,11 +19,15 @@ a {
     color: #000;
 }
 
-[role="banner"] img {
+[role="banner"] h1 {
+    font-size: 1.75em;
+}
+
+[role="banner"] h1 img {
     vertical-align: middle;
-    width: 1.272727273em; /* 28 / 22 */
-    height: 1.272727273em; /* 28 / 22 */
-    margin-right: 0.272727273em; /* 6 / 22 */
+    width: 1.142857143em; /* 32 / 28 */
+    height: 1.142857143em; /* 32 / 28 */
+    margin-right: 0.285714286em; /* 8 / 28 */
 }
 
 .theme-dark {
