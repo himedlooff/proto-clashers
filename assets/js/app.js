@@ -40,10 +40,12 @@ function initTOCNav() {
     '</div>'
   );
 
-  $('#post-nav').sticky({
-    topSpacing: 0,
-    getWidthFrom: '#post-nav_wrapper'
-  });
+  if ($(window).width() > 48 * 16) {
+    $('#post-nav').sticky({
+      topSpacing: 0,
+      getWidthFrom: '#post-nav_wrapper'
+    });
+  }
 
 }
 

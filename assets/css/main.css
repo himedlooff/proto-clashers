@@ -7,8 +7,8 @@ body {
 }
 
 h1 {
-    font-size: 1.75em; /* 28 / 16 */
-    margin: 0.714285714em 0; /* 20 / 28 */
+    font-size: 1.375em; /* 22 / 16 */
+    margin: 0.454545455em 0; /* 10 / 22 */
 }
 
 p {
@@ -19,16 +19,11 @@ a {
     color: #000;
 }
 
-[role="banner"] h1 {
-    font-size: 2em;
-    line-height: 1.285714286em; /* 36 / 28 */
-}
-
 [role="banner"] img {
     vertical-align: middle;
-    width: 1.285714286em; /* 36 / 28 */
-    height: 1.285714286em; /* 36 / 28 */
-    margin-right: 0.642857143em; /* 18 / 28 */
+    width: 1.272727273em; /* 28 / 22 */
+    height: 1.272727273em; /* 28 / 22 */
+    margin-right: 0.272727273em; /* 6 / 22 */
 }
 
 .theme-dark {
@@ -50,10 +45,6 @@ a {
 
 .wrapper:after {
     clear: both;
-}
-
-[role="main"] > .wrapper {
-    padding-top: 2em;
 }
 
 .token {
@@ -114,12 +105,17 @@ a {
     border-top-right-radius: 0;
 }
 
+[role="main"] > .wrapper {
+    padding-top: 1em;
+    padding-bottom: 0;
+}
+
 .post-label {
     font-size: 1em;
 }
 
 .post-content {
-    padding-top: 1em;
+    padding: 1em 0 2em;
      -ms-word-break: break-all;
          word-break: break-all;
 
@@ -140,8 +136,8 @@ a {
 }
 
 .post-nav {
-    padding-top: 2em;
-    margin-top: 2em;
+    padding: 2em 1em;
+    margin: 0 -1em;
     border-top: 1px solid #ccc;
     background: #eee;
 }
@@ -233,8 +229,18 @@ a {
 
 @media screen and (min-width: 48em) { /* 768 / 30 */
 
+    h1 {
+        font-size: 1.75em; /* 28 / 16 */
+        margin: 0.357142857em 0; /* 10 / 28 */
+    }
+
     .wrapper {
         padding: 2em;
+    }
+
+    [role="main"] > .wrapper {
+        padding-top: 2em;
+        padding-bottom: 1em;
     }
 
     .l-main {
@@ -249,7 +255,7 @@ a {
     }
 
     .post-nav {
-        padding-top: 1em;
+        padding: 1em 0 0;
         margin: 0;
         border: 0;
         background: transparent;
