@@ -1,8 +1,13 @@
 # See http://jekyllrb.com/docs/github-pages/ for more info
-baseurl: '/proto-clashers'
-baseurlremote: '/DragonSlayersJr'
+baseurl:        '/proto-clashers'
+baseurlremote:  '/DragonSlayersJr'
+assetsurl:      'assets/'
 
 # Google Analytics
 ga:
   root: 'himedlooff.github.io'
   id: 'UA-46323278-1'
+
+# Build options
+source:         .
+layouts:        ./_layouts
