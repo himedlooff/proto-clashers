@@ -122,7 +122,8 @@ function initHistoryList(data, editor) {
       '</div>' +
     '</div>')
     .children('.history')
-    .slideToggle();
+    .fadeTo(0,0)
+    .fadeTo(750,1);
   
   // Expand the history list on click
   $('.history-more').click(function(e){
