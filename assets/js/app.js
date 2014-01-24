@@ -111,13 +111,16 @@ function initHistoryList(data, editor) {
 
   // Initializes the creation and placement of the hitory list and history list events.
 
+  // First scrub the commit history and filter it to commits from the editor
+  var scrubbedData = scrubGithubCommits(data, editor);
+
   // Create the history list and insert it into the dom.
   $('[role="main"]').prepend(
     '<div class="history">' +
       '<div class="wrapper">' +
-        makeLatestHistoryItem(data[0]) +
+        makeLatestHistoryItem(scrubbedData[0]) +
         '<ul class="history-list">' +
-          makeHistoryItemList(data, editor) +
+          makeHistoryItemList(scrubbedData) +
         '</ul>' +
       '</div>' +
     '</div>')
@@ -133,7 +136,7 @@ function initHistoryList(data, editor) {
 
 }
 
-function makeHistoryItemList(data, editor) {
+function makeHistoryItemList(data) {
 
   // Expects github api data for a repos commits, and the string of the username to filter the commits by.
   // Returns a string representing html for all but the first filtered commits.
@@ -144,16 +147,14 @@ function makeHistoryItemList(data, editor) {
   // Loop through the data source starting from the second item and create a history item string
   // representing html. Append them together to screate a master list of all history items.
   for ( var i = 1; i < total; i++ ) {
-    if (data[i].commit.author.name === editor) {
-      historyList += makeHistoryItem(
-        data[i],
-        '<li class="history-list_item">' +
-          '<span class="history-message">' +
-            '<span class="history-date token"></span>' +
-          '</span> ' +
-        '</li>'
-      );
-    }
+    historyList += makeHistoryItem(
+      data[i],
+      '<li class="history-list_item">' +
+        '<span class="history-message">' +
+          '<span class="history-date token"></span>' +
+        '</span> ' +
+      '</li>'
+    );
   }
 
   return historyList;
@@ -166,7 +167,7 @@ function makeHistoryItem(commitData, template) {
   // Returns a string representing html for the commit.
 
   var $template = $(template);
-  var commitMessage = cleanCommitMessage(commitData.commit.message);
+  var commitMessage = commitData.commit.message;
   var timeStr = commitData.commit.committer.date;
   var date = new Date(timeStr);
   var day = date.getDate();
@@ -199,6 +200,24 @@ function makeLatestHistoryItem(firstCommitData) {
     '</p>'
   );
 
+}
+
+function scrubGithubCommits(data, editor) {
+
+  var total = data.length,
+      scrubbedData = [];
+
+  // Loop through the commits
+  for ( var i = 0; i < total; i++ ) {
+    if (data[i].commit.author.name === editor) {
+      // Clean the message removing certain phrases
+      data[i].commit.message = cleanCommitMessage(data[i].commit.message);
+      // Add the scrubbed data to the scrubbed array
+      scrubbedData.push(data[i]);
+    }
+  }
+
+  return scrubbedData;
 }
 
 function cleanCommitMessage(str) {
