@@ -1,6 +1,11 @@
+body,
+html {
+    height:100%
+}
+
 body {
-    margin: 0;
     padding: 0;
+    margin: 0;
     font-size: 100%;
     line-height: 1.375; /* 22 / 16 */
     font-family: 'Quattrocento Sans', Arial, sans-serif;
@@ -30,14 +35,7 @@ a {
     margin-right: 0.285714286em; /* 8 / 28 */
 }
 
-.theme-dark {
-    background: #000;
-    color: #fff;
-}
-
 .wrapper {
-    max-width: 960px;
-    margin: 0 auto;
     padding: 1em;
 }
 
@@ -178,11 +176,10 @@ a {
 .history {
     display: none;
     font-size: 1em; /* 16 */
-    background: #eee;
+    /*background: #eee;*/
 }
 
 .history > .wrapper {
-    padding-top: 0;
     padding-bottom: 0;
 }
 
@@ -190,8 +187,8 @@ a {
     display: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     list-style-type: none;
 }
 
@@ -201,7 +198,7 @@ a {
 }
 
 .history-list_item + .history-list_item {
-    border-top: 1px solid #fff;
+    border-top: 1px solid #ccc;
 }
 
 .history-latest {
@@ -231,6 +228,19 @@ a {
     margin-right: 6px;
 }
 
+.theme-dark {
+    background: #000;
+    color: #fff;
+}
+
+.theme-dark a {
+    color: #fff;
+}
+
+.theme-dark .token__dark {
+    background-color: #333;
+}
+
 @media screen and (min-width: 48em) { /* 768 / 30 */
 
     h1 {
@@ -239,23 +249,25 @@ a {
     }
 
     .wrapper {
-        padding: 2em;
+        padding: 2.5em;
     }
 
-    [role="main"] > .wrapper {
-        padding-top: 2em;
-        padding-bottom: 1em;
+    .l-main .wrapper {
+        padding-right: 14em;
     }
 
     .l-main {
         display: block;
-        width: 80%;
+        width: 70%;
+        padding-left: 30%;
         float: right;
     }
 
     .l-side {
         display: block;
-        width: 15%;
+        width: 30%;
+        height: 100%;
+        position: fixed;
     }
 
     .post-nav {
@@ -263,10 +275,6 @@ a {
         margin: 0;
         border: 0;
         background: transparent;
-    }
-
-    .history .wrapper {
-        padding: 0 2em;
     }
 
     .toc-nav-jump-link {

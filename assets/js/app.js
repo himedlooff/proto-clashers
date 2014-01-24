@@ -29,8 +29,8 @@ function initTOCNav() {
 
   // Creates and inserts a table of contents nav
 
-  $('.post').after(
-    '<div class="l-side" id="post-nav_wrapper">' +
+  $('[role="banner"]').after(
+    '<div id="post-nav_wrapper">' +
       '<div class="post-nav" id="post-nav">' +
         '<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
         '<ul class="post-nav-list">' +
@@ -40,12 +40,12 @@ function initTOCNav() {
     '</div>'
   );
 
-  if ($(window).width() > 48 * 16) {
-    $('#post-nav').sticky({
-      topSpacing: 0,
-      getWidthFrom: '#post-nav_wrapper'
-    });
-  }
+  // if ($(window).width() > 48 * 16) {
+  //   $('#post-nav').sticky({
+  //     topSpacing: 0,
+  //     getWidthFrom: '#post-nav_wrapper'
+  //   });
+  // }
 
 }
 
@@ -115,7 +115,7 @@ function initHistoryList(data, editor) {
   var scrubbedData = scrubGithubCommits(data, editor);
 
   // Create the history list and insert it into the dom.
-  $('[role="main"]').prepend(
+  $('.l-main').prepend(
     '<div class="history">' +
       '<div class="wrapper">' +
         makeLatestHistoryItem(scrubbedData[0]) +

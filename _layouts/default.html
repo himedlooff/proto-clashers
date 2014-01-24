@@ -17,23 +17,31 @@
 
   <body>
 
-    <header role="banner" class="theme-dark">
-      <div class="wrapper">
-        <h1><img src="assets/img/shield.png" alt=""> {{ page.title }}</h1>
-      </div>
-    </header>
+      <div class="l-side theme-dark">
+        <div class="wrapper">
 
-    <div role="main">
-      <!-- HISTORY GOES HERE -->
-      <div class="wrapper">
-        <div class="l-main post">
+          <header role="banner">
+            <h1><img src="assets/img/shield.png" alt=""> {{ page.title }}</h1>
+          </header>
+
+          <!-- NAV GOES HERE -->
+          
+        </div>
+      </div>
+
+      <div class="l-main">
+
+        <!-- HISTORY GOES HERE -->
+
+        <div class="post" role="main">
+          <div class="wrapper">
             <div class="post-content">
               {{content}}
             </div>
+          </div>
         </div>
-        <!-- NAV GOES HERE -->
+
       </div>
-    </div>
 
     <script src="{{ site.assetsurl }}js/jquery-1.9.1.min.js"></script>
     <script src="{{ site.assetsurl }}js/jquery.sticky.js"></script>
