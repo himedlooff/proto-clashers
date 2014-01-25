@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg class="shield" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 preserveAspectRatio="xMinYMin meet" viewBox="0 0 60 54" enable-background="new 0 0 60 54" xml:space="preserve">
+<polygon class="shield_stripe_background" fill-rule="evenodd" clip-rule="evenodd" fill="#999999" points="0,3.03 0,11.07 23,26.13 30,20.11 38,26.13 60,11.07 
+	60,3.03 37,19.1 30,12.08 23,19.1 "/>
+<polygon class="shield_stripe_background" fill-rule="evenodd" clip-rule="evenodd" fill="#999999" points="0,18.09 0,26.12 23,40.19 30,34.16 38,40.19 60,26.12 
+	60,18.09 37,33.16 30,27.13 23,33.16 "/>
+<path class="shield_shape" fill-rule="evenodd" clip-rule="evenodd" fill="#008E3D" d="M3,28.12c0,12.01,23,24.1,23,24.1c2.36,2.37,5.64,2.37,8,0
+	c0,0,23-12.09,23-24.1V4.02c0-3.33-2.69-1.01-6-1.01h-8C42.23,1.24,40.05,0,38,0H22c-2.05,0-4.23,1.24-5,3.01H9
+	c-3.31,0-6-2.32-6,1.01V28.12z"/>
+<polygon class="shield_stripe__shadow" fill-rule="evenodd" clip-rule="evenodd" points="0,3.03 0,11.07 23,32.13 30,26.11 38,32.13 60,11.07 60,3.03 37,25.1 
+	30,18.08 23,25.1 "/>
+<polygon class="shield_stripe__shadow" fill-rule="evenodd" clip-rule="evenodd" points="0,18.09 0,26.12 23,46.19 30,40.16 38,46.19 60,26.12 60,18.09 37,39.16 
+	30,33.13 23,39.16 "/>
+<polygon class="shield_stripe__foreground" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,3.03 0,11.07 23,31.13 30,25.11 38,31.13 60,11.07 
+	60,3.03 37,24.1 30,17.08 23,24.1 "/>
+<polygon class="shield_stripe__foreground" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,18.09 0,26.12 23,45.19 30,39.16 38,45.19 60,26.12 
+	60,18.09 37,38.16 30,32.13 23,38.16 "/>
+</svg>

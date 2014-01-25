@@ -9,7 +9,7 @@
     <title>{{ page.title }}</title>
 
     <link rel="stylesheet" href="{{ site.assetsurl }}css/main.css">
-    <!-- <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,29 @@
         <div class="wrapper">
 
           <header role="banner">
-            <h1><img src="assets/img/shield.png" alt=""> {{ page.title }}</h1>
+            <div class="shield-container">
+              <svg class="shield" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width="300px" height="269.987px" viewBox="0 0 300 269.987" enable-background="new 0 0 300 269.987" xml:space="preserve">
+              <g>
+                <polygon class="shield_stripe__background" fill-rule="evenodd" clip-rule="evenodd" fill="#999999" points="0,15.148 0,55.35 115,130.648 150,100.549 190,130.648 
+                  300,55.35 300,15.148 185,95.5 150,60.4 115,95.5   "/>
+                <polygon class="shield_stripe__background" fill-rule="evenodd" clip-rule="evenodd" fill="#999999" points="0,90.449 0,130.602 115,200.949 150,170.801 190,200.949 
+                  300,130.602 300,90.449 185,165.801 150,135.648 115,165.801  "/>
+                <path class="shield_shape" fill-rule="evenodd" clip-rule="evenodd" fill="#008E3D" d="M15,140.602c0,60.047,115,120.5,115,120.5
+                  c11.799,11.848,28.201,11.848,40,0c0,0,115-60.453,115-120.5V20.1c0-16.65-13.449-5.051-30-5.051h-40C211.15,6.201,200.25,0,190,0
+                  h-80C99.75,0,88.85,6.201,85,15.049H45c-16.551,0-30-11.6-30,5.051V140.602z"/>
+                <polygon class="shield_stripe__shadow" fill-rule="evenodd" clip-rule="evenodd" points="0,15.148 0,55.35 115,160.648 150,130.549 190,160.648 300,55.35 
+                  300,15.148 185,125.5 150,90.4 115,125.5   "/>
+                <polygon class="shield_stripe__shadow" fill-rule="evenodd" clip-rule="evenodd" points="0,90.449 0,130.602 115,230.949 150,200.801 190,230.949 300,130.602 
+                  300,90.449 185,195.801 150,165.648 115,195.801  "/>
+                <polygon class="shield_stripe__foreground" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,15.148 0,55.35 115,155.648 150,125.549 190,155.648 
+                  300,55.35 300,15.148 185,120.5 150,85.4 115,120.5   "/>
+                <polygon class="shield_stripe__foreground" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,90.449 0,130.602 115,225.949 150,195.801 190,225.949 
+                  300,130.602 300,90.449 185,190.801 150,160.648 115,190.801  "/>
+              </g>
+              </svg>
+            </div>
+            <h1><!-- <img src="assets/img/shield-shape.svg" alt="">  -->{{ page.title }}</h1>
           </header>
 
           <!-- NAV GOES HERE -->
