@@ -40,12 +40,12 @@ function initTOCNav() {
     '</div>'
   );
 
-  // if ($(window).width() > 48 * 16) {
-  //   $('#post-nav').sticky({
-  //     topSpacing: 0,
-  //     getWidthFrom: '#post-nav_wrapper'
-  //   });
-  // }
+  if ($(window).width() > 48 * 16) {
+    $('#post-nav').sticky({
+      topSpacing: 0,
+      getWidthFrom: '#post-nav_wrapper'
+    });
+  }
 
 }
 
@@ -72,8 +72,8 @@ function makeTOCNavItem(headingElement) {
   var $h = $(headingElement);
 
   return '' +
-    '<li class="nav-list_item">' +
-      '<a href="#' + $h.attr('id') + '" class="post-nav-list-item-link">' +
+    '<li class="post-nav-list_item">' +
+      '<a href="#' + $h.attr('id') + '" class="post-nav-list_item_link">' +
         $h.text() +
       '</a>' +
     '</li>';

@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg class="shield" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 preserveAspectRatio="xMinYMin meet" viewBox="0 0 60 54" enable-background="new 0 0 60 54" xml:space="preserve">
-<polygon class="shield_stripe_background" fill-rule="evenodd" clip-rule="evenodd" fill="#999999" points="0,3.03 0,11.07 23,26.13 30,20.11 38,26.13 60,11.07 
-	60,3.03 37,19.1 30,12.08 23,19.1 "/>
-<polygon class="shield_stripe_background" fill-rule="evenodd" clip-rule="evenodd" fill="#999999" points="0,18.09 0,26.12 23,40.19 30,34.16 38,40.19 60,26.12 
-	60,18.09 37,33.16 30,27.13 23,33.16 "/>
-<path class="shield_shape" fill-rule="evenodd" clip-rule="evenodd" fill="#008E3D" d="M3,28.12c0,12.01,23,24.1,23,24.1c2.36,2.37,5.64,2.37,8,0
-	c0,0,23-12.09,23-24.1V4.02c0-3.33-2.69-1.01-6-1.01h-8C42.23,1.24,40.05,0,38,0H22c-2.05,0-4.23,1.24-5,3.01H9
-	c-3.31,0-6-2.32-6,1.01V28.12z"/>
-<polygon class="shield_stripe__shadow" fill-rule="evenodd" clip-rule="evenodd" points="0,3.03 0,11.07 23,32.13 30,26.11 38,32.13 60,11.07 60,3.03 37,25.1 
-	30,18.08 23,25.1 "/>
-<polygon class="shield_stripe__shadow" fill-rule="evenodd" clip-rule="evenodd" points="0,18.09 0,26.12 23,46.19 30,40.16 38,46.19 60,26.12 60,18.09 37,39.16 
-	30,33.13 23,39.16 "/>
-<polygon class="shield_stripe__foreground" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,3.03 0,11.07 23,31.13 30,25.11 38,31.13 60,11.07 
-	60,3.03 37,24.1 30,17.08 23,24.1 "/>
-<polygon class="shield_stripe__foreground" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0,18.09 0,26.12 23,45.19 30,39.16 38,45.19 60,26.12 
-	60,18.09 37,38.16 30,32.13 23,38.16 "/>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="300px" height="259.889px" viewBox="0 0 300 259.889" enable-background="new 0 0 300 259.889" xml:space="preserve">
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#494949" points="10,28.004 10,68.004 115,84.004 150,54.004 185,84.004 
+	290,68.004 290,28.004 185,49.004 150,14.004 115,49.004 "/>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#494949" points="10,85.004 10,125.004 115,136.004 150,106.004 
+	185,136.004 290,125.004 290,85.004 185,101.004 150,71.004 115,101.004 "/>
+<radialGradient id="SVGID_1_" cx="151" cy="40.9443" r="134.8119" gradientTransform="matrix(1 0 0 1.4238 0 -17.3506)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#066A25"/>
+	<stop  offset="1" style="stop-color:#064125"/>
+</radialGradient>
+<path display="none" fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" d="M35,140.556
+	c0,55.62,96.481,111.111,96.481,111.111c10.917,10.963,26.121,10.963,37.037,0c0,0,96.481-55.491,96.481-111.111V18.519
+	c0-15.408-12.436-4.63-27.778-4.63h-27.037C206.611,5.676,196.528,0,187.037,0h-74.074c-9.491,0-19.574,5.676-23.148,13.889H62.778
+	C47.436,13.889,35,3.111,35,18.519V140.556z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35,140.556c0,55.62,96.481,111.111,96.481,111.111
+	c10.917,10.963,26.121,10.963,37.037,0c0,0,96.481-55.491,96.481-111.111V18.519c0-15.408-12.436-4.63-27.778-4.63h-27.037
+	C206.611,5.676,196.528,0,187.037,0h-74.074c-9.491,0-19.574,5.676-23.148,13.889H62.778C47.436,13.889,35,3.111,35,18.519V140.556z
+	"/>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#005121" points="10,28.004 10,68.004 115,144.004 150,114.004 185,144.004 
+	290,68.004 290,28.004 185,109.004 150,74.004 115,109.004 "/>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#005121" points="10,85.004 10,125.004 115,196.004 150,166.004 
+	185,196.004 290,125.004 290,85.004 185,161.004 150,131.004 115,161.004 "/>
+<polygon opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" fill="#428700" points="10,50.004 10,90.004 115,161.004 
+	150,131.004 185,161.004 290,90.004 290,50.004 185,126.004 150,91.004 115,126.004 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="10" y1="83.5044" x2="290" y2="83.5044">
+	<stop  offset="0" style="stop-color:#595959"/>
+	<stop  offset="0.25" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.75" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#595959"/>
+</linearGradient>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_2_)" points="10,28.004 10,68.004 115,139.004 150,109.004 
+	185,139.004 290,68.004 290,28.004 185,104.004 150,69.004 115,104.004 "/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="10" y1="138.0044" x2="290" y2="138.0044">
+	<stop  offset="0" style="stop-color:#595959"/>
+	<stop  offset="0.25" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.75" style="stop-color:#FFFFFF"/>
+	<stop  offset="1" style="stop-color:#595959"/>
+</linearGradient>
+<polygon fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_3_)" points="10,85.004 10,125.004 115,191.004 150,161.004 
+	185,191.004 290,125.004 290,85.004 185,156.004 150,126.004 115,156.004 "/>
 </svg>
