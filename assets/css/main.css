@@ -73,6 +73,8 @@ a {
 
 .l-main {
     background: #fff;
+    background-image: url('../img/mooning_@2X.png');
+    background-size: 400px;
 }
 
 .token {
