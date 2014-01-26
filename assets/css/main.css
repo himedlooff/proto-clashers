@@ -40,7 +40,7 @@ a {
     background-position: center top;
     font-size: 32px;
     text-align: center;
-    text-shadow: 0 0 16px #7CAB5C;
+    text-shadow: 0 0 2px #000, 0 0 16px #7CAB5C;
 }
 
 [role="banner"] h1 span {
