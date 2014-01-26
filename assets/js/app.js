@@ -40,12 +40,12 @@ function initTOCNav() {
     '</div>'
   );
 
-  if ($(window).width() > 48 * 16) {
-    $('.l-side > .wrapper').sticky({
-      topSpacing: 0,
-      getWidthFrom: '#post-nav_wrapper'
-    });
-  }
+  // if ($(window).width() > 48 * 16) {
+  //   $('#post-nav').sticky({
+  //     topSpacing: 0,
+  //     getWidthFrom: '#post-nav_wrapper'
+  //   });
+  // }
 
 }
 
@@ -151,7 +151,7 @@ function makeHistoryItemList(data) {
       data[i],
       '<li class="history-list_item">' +
         '<span class="history-message">' +
-          '<span class="history-date token"></span>' +
+          '<span class="history-date token token__dark"></span>' +
         '</span> ' +
       '</li>'
     );
@@ -173,7 +173,10 @@ function makeHistoryItem(commitData, template) {
   var day = date.getDate();
   var year = date.getFullYear().toString().substr(2,2);
   var month = date.getMonth()+1;
-  var dateStr = '<span class="history-date-month-day">' + month + '-' + day + '</span>' + '-' +
+  var dateStr = '<span class="history-date-month-day">' +
+                  month + '<span class="date-delimiter">-</span>' +
+                  day +
+                '</span>' + '<span class="date-delimiter">-</span>' +
                 '<span class="history-date-year">' + year + '</span>';
 
   $template.find('.history-message').append(commitMessage);
@@ -191,12 +194,12 @@ function makeLatestHistoryItem(firstCommitData) {
   return makeHistoryItem(
     firstCommitData,
     '<p class="history-latest history-list_item">' +
-      '<span class="token-group token-group-stacked">' +
-        '<span class="history-latest-label token token__attention token-group_item token-group-stacked_item">Latest</span> ' +
-        '<span class="history-date token token__attention token-group_item token-group-stacked_item"></span>' +
-      '</span> ' +
-      '<span class="history-message"></span> ' +
-      '<span class="history-more"><a href="#">See the full history</a></span>' +
+      //'<span class="token-group token-group-stacked">' +
+        //'<span class="history-latest-label token token__attention token-group_item token-group-stacked_item">Latest</span> ' +
+        '<span class="history-date token token__attention"></span> ' +
+      //'</span> ' +
+      '<span class="history-message"></span> &nbsp;' +
+      '<span class="history-more"><a href="#" class="token token__dark">...</a></span>' +
     '</p>'
   );
 

@@ -74,7 +74,7 @@ a {
 .token {
     display: inline-block;
     vertical-align: middle;
-    margin-top: -2px;
+    margin-top: -4px;
     padding: 3px 5px 2px;
     font-size: .75em; /* 12 / 16 */
     line-height: 1;
@@ -257,31 +257,36 @@ a {
     border-top: 1px dotted #444;
 }
 
+.history-message {
+    color: #ddd;
+}
+
 .history-latest {
     position: relative;
-    padding-left: 75px;
+    /*padding-left: 75px;*/
     margin: 0;
 }
 
-.history-latest .token-group {
-    width: 65px;
-    margin-top: 2px;
-    position: absolute;
-    left: 0;
+.history-latest .history-message,
+.history-latest .history-more {
+    display: inline-block;
+    color: #fff;
+}
+
+a.token {
+    text-decoration: none;
 }
 
 .history-latest-label {
     display: block;
 }
 
-.history-more {
-    display: block;
-    margin: 0;
-    font-size: .75em; /* 12 / 16 */
+.history-date {
+    margin-right: 12px;
 }
 
-.history-date {
-    margin-right: 6px;
+.history-more {
+    margin-left: 12px;
 }
 
 .theme-dark {
@@ -325,7 +330,8 @@ a {
         display: block;
         width: 30%;
         height: 100%;
-        float: left;
+        /*float: left;*/
+        position: fixed;
         text-align: right;
     }
 
