@@ -41,7 +41,7 @@ function initTOCNav() {
   );
 
   if ($(window).width() > 48 * 16) {
-    $('#post-nav').sticky({
+    $('.l-side > .wrapper').sticky({
       topSpacing: 0,
       getWidthFrom: '#post-nav_wrapper'
     });
@@ -116,7 +116,7 @@ function initHistoryList(data, editor) {
 
   // Create the history list and insert it into the dom.
   $('.l-main').prepend(
-    '<div class="history">' +
+    '<div class="history theme-dark">' +
       '<div class="wrapper">' +
         makeLatestHistoryItem(scrubbedData[0]) +
         '<ul class="history-list">' +
@@ -192,8 +192,8 @@ function makeLatestHistoryItem(firstCommitData) {
     firstCommitData,
     '<p class="history-latest history-list_item">' +
       '<span class="token-group token-group-stacked">' +
-        '<span class="history-latest-label token token__dark token-group_item token-group-stacked_item">Latest</span> ' +
-        '<span class="history-date token token-group_item token-group-stacked_item"></span>' +
+        '<span class="history-latest-label token token__attention token-group_item token-group-stacked_item">Latest</span> ' +
+        '<span class="history-date token token__attention token-group_item token-group-stacked_item"></span>' +
       '</span> ' +
       '<span class="history-message"></span> ' +
       '<span class="history-more"><a href="#">See the full history</a></span>' +
