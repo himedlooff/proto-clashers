@@ -40,7 +40,7 @@ a {
     background-position: center top;
     font-size: 32px;
     text-align: center;
-    text-shadow: 1px 2px 0 #000;
+    text-shadow: 0 0 16px #7CAB5C;
 }
 
 [role="banner"] h1 span {
@@ -176,6 +176,7 @@ a {
 
 .post-content h1 {
     margin: 1.25em 0 0.714285714em; /* 35 / 28, 20 / 28 */
+    text-shadow: -1px 1px 0 #fff, -2px 2px 0 rgba(0,0,0,0.2);
 }
 
 .post-content h1:first-child {
