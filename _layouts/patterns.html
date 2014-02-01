@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="A styleguide for proto-clashers." />
+    <title>proto-clashers patterns</title>
+
+    <link rel="stylesheet" href="{{ site.assetsurl }}css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <style>
+      .pattern-main {
+        padding: 2em;
+      }
+      .theme-toggles {
+        padding: 1em 2em;
+        margin: 0;
+      }
+      [data-theme].is-current:after {
+        content: "✓";
+        margin-left: .25em;
+      }
+      .pattern_label {
+        /*padding: 1em;
+        background: #eee;*/
+        font-size: 1em;
+        font-weight: normal;
+      }
+      .pattern_content {
+        padding: 2em 2em 4em;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <p class="token-group theme-toggles">
+      <button class="token token-group_item is-current" data-theme="">No theme</button>
+      <button class="token token-group_item token__light" data-theme="theme-light">Light theme</button>
+      <button class="token token-group_item token__dark" data-theme="theme-dark">Dark theme</button>
+      <button class="token token-group_item token__dark" data-theme="theme-dark theme-dsi">DSI theme</button>
+    </p>
+
+    <div class="pattern-main">
+      {{ content }}
+    </div>
+
+    <script src="{{ site.assetsurl }}js/jquery-1.9.1.min.js"></script>
+    <script>
+      (function($)
+      {
+
+        $('[data-theme]').each(function(){
+          $(this).click(function(){
+            $('[data-theme]').removeClass('is-current');
+            $(this).addClass('is-current');
+            $('body')
+              .attr('class','')
+              .attr('class',$(this).data('theme'));
+
+          })
+        })
+
+      }(jQuery));
+    </script>
+
+  </body>
+</html>
