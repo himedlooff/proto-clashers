@@ -17,34 +17,30 @@
 
   <body class="theme-dark theme-dsi">
 
-      <div class="l-side">
-        <div class="wrapper">
+    <div class="l-side">
+      <div class="l-side_inner wrapper">
 
-          <header role="banner">
-            <h1 class="logo">
-              <img src="assets/img/stripe-double-metallic.svg" alt="" class="logo_art">
-              {{ page.title }}
-            </h1>
-          </header>
+        <header role="banner">
+          <h1 class="logo">
+            <img src="assets/img/stripe-double-metallic.svg" alt="" class="logo_art">
+            {{ page.title }}
+          </h1>
+        </header>
+        <!-- NAV GOES HERE -->
 
-          <!-- NAV GOES HERE -->
-
-        </div>
       </div>
+    </div>
 
-      <div class="l-main">
+    <div class="l-main" role="main">
+      <div class="l-main_inner">
 
         <!-- HISTORY GOES HERE -->
-
-        <div class="post" role="main">
-          <div class="wrapper">
-            <div class="post-content theme-light">
-              {{content}}
-            </div>
-          </div>
+        <div class="post theme-light">
+          {{content}}
         </div>
 
       </div>
+    </div>
 
     <script src="{{ site.assetsurl }}js/jquery-1.9.1.min.js"></script>
     <script src="{{ site.assetsurl }}js/jquery.sticky.js"></script>

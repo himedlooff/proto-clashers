@@ -7,10 +7,10 @@ function initPage(repo, editor) {
 
   // This function initializes all of the enhancements for the page
 
-  // Create a table of contents nav from the h1 elements in .post-content
+  // Create a table of contents nav from the h1 elements in .post
   initTOCNav();
 
-  // Add table of content links before each h1 in .post-content
+  // Add table of content links before each h1 in .post
   initTOCLinks();
 
   // Build a history list using commit messages from github
@@ -29,10 +29,10 @@ function initTOCNav() {
 
   // Creates and inserts a table of contents nav
 
-  $('[role="banner"]').after(
+  $('.l-side_inner').append(
     '<div id="post-nav_wrapper">' +
       '<div class="post-nav" id="post-nav">' +
-        '<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
+        //'<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
         '<ul class="post-nav-list">' +
           makeTOCNav() +
         '</ul>' +
@@ -56,8 +56,8 @@ function makeTOCNav() {
   var navItems = '';
 
   // Make a nav item html string for each h1 element
-  // in .post-content and append it to navItems.
-  $('.post-content h1').each(function(){
+  // in .post and append it to navItems.
+  $('.post h1').each(function(){
     navItems += makeTOCNavItem(this);
   });
 
@@ -74,6 +74,7 @@ function makeTOCNavItem(headingElement) {
   return '' +
     '<li class="post-nav-list_item">' +
       '<a href="#' + $h.attr('id') + '" class="post-nav-list_item_link">' +
+        '<span class="post-nav-list_item-icon">↪</span>' +
         $h.text() +
       '</a>' +
     '</li>';
@@ -86,7 +87,7 @@ function makeTOCNavItem(headingElement) {
 
 function initTOCLinks() {
 
-  // Inserts a link to the table of contents nav before each h1 element in .post-content
+  // Inserts a link to the table of contents nav before each h1 element in .post
 
   var tocLink = '' +
         '<p class="toc-nav-jump-link">' +
@@ -95,7 +96,7 @@ function initTOCLinks() {
           '</a>' +
         '</p>';
 
-  $('.post-content h1').each(function(index){
+  $('.post h1').each(function(index){
     if (index > 0) {
       $(this).before(tocLink);
     }
@@ -115,9 +116,9 @@ function initHistoryList(data, editor) {
   var scrubbedData = scrubGithubCommits(data, editor);
 
   // Create the history list and insert it into the dom.
-  $('.l-main').prepend(
-    '<div class="history theme-dark">' +
-      '<div class="wrapper">' +
+  $('.l-main_inner').prepend(
+    '<div class="history">' +
+      '<div class="history_inner">' +
         makeLatestHistoryItem(scrubbedData[0]) +
         '<ul class="history-list">' +
           makeHistoryItemList(scrubbedData) +
