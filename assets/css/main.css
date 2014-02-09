@@ -221,7 +221,7 @@ a.token {
 
 .toc-nav-jump-link {
     padding: 2.125em 0; /* 34 / 16 = 2.375 */
-    margin: 2.125em -1em 0; /* 34 / 16 = 2.375 */
+    margin: 2.125em -1em -2em; /* 34 / 16 = 2.375 */
     background: #E9E8F9;
     text-align: center;
 }
@@ -346,7 +346,9 @@ a.token {
     }
 
     .toc-nav-jump-link {
-        display: none;
+        padding: 0;
+        margin: 2.125em 0 0.125em; /* 34 / 16 = 2.375 */
+        background: transparent;
     }
 
 }

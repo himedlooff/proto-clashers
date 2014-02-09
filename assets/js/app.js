@@ -33,20 +33,29 @@ function initTOCNav() {
     '<div id="post-nav_wrapper">' +
       '<div class="post-nav" id="post-nav">' +
         //'<h1 class="post-nav-label" id="table-of-contents">Table of contents</h1>' +
-        '<ul class="post-nav-list">' +
+        '<ul id="table-of-contents" class="post-nav-list">' +
           makeTOCNav() +
         '</ul>' +
       '</div>' +
     '</div>'
   );
 
-  if ($(window).width() > 48 * 16 &&
-      $(window).height() > $('#post-nav').height()) {
-    $('#post-nav').sticky({
-      topSpacing: 0,
-      getWidthFrom: '#post-nav_wrapper'
-    });
-  }
+  // if ($(window).width() > 48 * 16 &&
+  //     $(window).height() > $('#post-nav').height()) {
+  //   $('#post-nav').sticky({
+  //     topSpacing: 0,
+  //     getWidthFrom: '#post-nav_wrapper'
+  //   });
+  // }
+
+  // window.onresize = function() {
+  //   if ($(window).width() < 48 * 16 &&
+  //       $(window).height() < $('#post-nav').height()) {
+  //     $('#post-nav').attr('style','');
+  //     $('#post-nav-sticky-wrapper').attr('style','');
+  //     $.fn.sticky = function(){};
+  //   }
+  // }
 
 }
 
@@ -102,6 +111,8 @@ function initTOCLinks() {
       $(this).before(tocLink);
     }
   });
+
+  $('.post').append(tocLink);
 
 }
 
